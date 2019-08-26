@@ -3,21 +3,29 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Movies List</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
+  <ion-card ion-item *ngFor="let item of items" (click)="movieSelect(item)">
+    <button ion-item>
+      <ion-avatar item-left>
+        <img [src]="image_base_url + item.poster_path">
+      </ion-avatar>
+      <h2 slot="end">{{item.title}}</h2>
+      <p slot="end">{{item.release_date}}</p>
     </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+
+    <ion-card-content>
+      <ion-item class="description">
+        {{item.overview}}
+      </ion-item>
+      <ion-item style="text-align: end">
+        <ion-note>
+          Valoración :{{item.vote_average}}
+        </ion-note>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
