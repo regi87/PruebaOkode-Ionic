@@ -1,7 +1,0 @@
-{
-  "name": "PruebaOkode",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}

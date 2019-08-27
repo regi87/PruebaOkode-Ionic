@@ -1,0 +1,28 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Movie Detail</ion-title>
+  </ion-toolbar>
+</ion-header>,
+<ion-content fullscreen>
+  <ion-card>
+    <ion-item>
+      <img style="max-width: 150px;" [src]="movie.image_url + movie.item.poster_path" />
+
+      <ion-card-header>
+
+        <ion-card-title>{{movie.item.title}}</ion-card-title>
+        <ion-card-subtitle>
+          Valoración: {{movie.item.vote_average}}
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-item>
+
+
+    <ion-card-content>
+      {{movie.item.overview}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
